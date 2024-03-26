@@ -1,0 +1,518 @@
+/* Reset CSS for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline: solid 1px red; */
+}
+
+:root {
+  --color-border-main: #aa3434;
+  --color-scrollbar: #aa3434;
+  --color-border-btn: #f7748a;
+  --color-background-main: #67828f85;
+  --color-text-main: #3b3a34dc;
+  --color-text-header: #3b3a34dc;
+  --color-text-trash-header: #302f2adc;
+  --color-box-main: #fff6de;
+  --color-scrollbar-2: #ffc635;
+  --color-list-hover: #ffc635;
+  --color-svg-stroke: red;
+  --color-svg-fill: blue;
+  --color-background-btn: #fff6de;
+  /* --color-btn-hover: #fc758c; */
+  /* --color-box-header: #ffb23b; */
+  /* --color-background-gradient: linear-gradient(
+  90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  ); */
+}
+
+/* Body styling */
+body {
+  max-width: 1200px; /* Maksimum genişlik */
+  margin: 0 auto; /* Sayfayı ortala */
+  background: var(--color-background-main);
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: monospace;
+  transition: background-color 0.7s ease, border-color 0.7s ease;
+}
+/* Header styling */
+header {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-box-main);
+  color: var(--color-text-main);
+  border-radius: 15px;
+  border: 3px solid var(--color-border-main);
+  border-top: none;
+  padding: 10px;
+  margin: 10px;
+  max-width: 100%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Button styling */
+.btn-add,
+.btn-trash-menu,
+.btn-search,
+.btn-empty-trash,
+.btn,
+.btn-settings,
+.btn-settings-close {
+  background-image: url(img/add.svg);
+  background-size: cover;
+  border: none;
+  border: 2px solid var(--color-border-main);
+  color: var(--color-text-main);
+  background-color: var(--color-background-btn);
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 20px;
+  cursor: pointer;
+}
+.btn-trash-close {
+  background-image: url(img/remove.svg);
+  background-size: cover;
+  background-color: var(--color-background-btn);
+  border: 2px hidden var(--color-border-main);
+  border-radius: 10px;
+  color: var(--color-text-main);
+  padding: 22px;
+  cursor: pointer;
+  margin-top: 11px;
+  margin-left: auto;
+  margin-right: 10px;
+  border: none;
+}
+.btn-trash-menu {
+  background-image: url(img/delete.svg);
+}
+
+.btn-search {
+  background-image: url(img/search.svg);
+  display: none;
+  /* margin-top: 11px; */
+  /* margin-left: 9px; */
+}
+.btn-empty-trash {
+  background-image: url(img/delete.svg);
+  margin-top: 11px;
+  margin-left: 9px;
+}
+.btn-empty-trash:hover {
+  background-color: var(--color-border-main);
+}
+.btn-settings {
+  background-image: url(img/theme.svg);
+  margin-right: 5px;
+}
+
+/* Save and Edit Button styling */
+.btn-save,
+.btn-edit {
+  position: absolute;
+  bottom: 14px;
+  padding: 18px;
+  right: 14px;
+  font-size: 20px;
+  background-color: var(--color-background-btn);
+  border: 3px solid var(--color-border-main);
+  border-radius: 13px;
+  color: var(--color-text-main);
+  opacity: 0.5;
+}
+.btn-save {
+  background-image: url(img/save.svg);
+  background-size: cover;
+}
+.btn-edit {
+  background-image: url(img/edit.svg);
+  background-size: cover;
+}
+.btn-edit:hover,
+.btn-save:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* Header title styling */
+.header-title {
+  border: 2px solid var(--color-border-main);
+  color: var(--color-text-header);
+  background-color: var(--color-background-btn);
+  border-radius: 12px;
+  font-size: 25px;
+  padding: 5px;
+  /* margin-left: 80px; */
+}
+
+/* Header date styling */
+.header-date {
+  display: flex;
+  border: 2px solid var(--color-border-main);
+  color: var(--color-text-header);
+  background-color: var(--color-background-btn);
+  border-radius: 7px;
+  font-size: 20px;
+  text-align: center;
+  align-items: center;
+  padding: 5px;
+}
+
+/* Container styling */
+.input-container,
+.read-container {
+  flex: 1;
+  margin: 0 7px;
+  flex-direction: column;
+}
+.read-container {
+  display: none;
+}
+.title-flex {
+  display: flex;
+  height: 70px;
+}
+/* Common styling for text areas and input fields */
+.sidebar,
+.read-note,
+.read-title,
+.input-note,
+.input-title {
+  font-size: 18px;
+  border: 3px solid var(--color-border-main);
+  color: var(--color-text-main);
+  background-color: var(--color-box-main);
+  border-top: none;
+  border-radius: 17px;
+  width: 100%;
+  /* max-width: 1200px; */
+  padding: 15px;
+  resize: none;
+  outline: none;
+}
+/* .read-zone {
+  
+} */
+/* Sidebar styling */
+.sidebar {
+  display: flex;
+  width: 20%;
+  margin-left: 10px;
+  height: 450px;
+  transition: left 0.3s ease;
+  padding: 5px;
+}
+
+/* Sidebar item styling on hover */
+.sidebar-li-flex:hover {
+  cursor: pointer;
+  /* border: 1px solid var(--color-border-main); */
+  background-color: var(--color-list-hover);
+  border-radius: 15px;
+  width: 100%;
+  transition: background-color 0.1s ease;
+}
+.sidebar-li-flex:hover .btn-trash {
+  display: block;
+}
+
+/* Flex styling for sidebar */
+.sidebar-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Sidebar ordered list styling */
+#sidebar-ol {
+  display: flex;
+  list-style: none;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5px;
+  /* margin: -8px; */
+  overflow-y: auto; /*İçerik artarsa kaydırma çubuğu görüntülenecek */
+}
+
+/* Styling for each sidebar item */
+.sidebar-li-flex {
+  font-size: 16px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-bottom: 5px; */
+  padding: 5px;
+  /* Başlıkların tek satırda kalmasını sağlar */
+}
+.sidebar-li-flex li {
+  flex: 1;
+  overflow: hidden; /*  */
+  white-space: nowrap;
+  text-overflow: ellipsis " ...";
+}
+.sidebar-li-active-note {
+  cursor: pointer;
+  border: 1px solid var(--color-border-main);
+  background-color: var(--color-list-hover);
+  border-radius: 15px;
+  width: 100%;
+}
+
+/* Trash button styling */
+.btn-trash {
+  background-image: url(img/delete.svg);
+  background-size: cover;
+  background-color: var(--color-list-hover);
+  background-blend-mode: multiply;
+  background-clip: content-box;
+  border: none;
+  width: 19px;
+  height: 19px;
+  opacity: 0.5;
+  display: none;
+}
+.btn-trash:hover {
+  opacity: 1;
+  border: 1px solid var(--color-list-hover);
+  background-color: var(--color-border-main);
+  border-radius: 5px;
+}
+
+/* Input and read title styling */
+.input-title,
+.read-title {
+  padding: auto;
+  margin-bottom: 5px;
+  padding-left: 15px;
+  border-radius: 15px;
+}
+
+.date-note {
+  font-size: 12px;
+  border: 3px solid var(--color-border-main);
+  color: var(--color-text-main);
+  background-color: var(--color-box-main);
+  border-top: none;
+  border-radius: 12px;
+  padding: 5px;
+  margin-left: 3px;
+  margin-bottom: 5px;
+}
+
+/* Input and read note styling */
+.input-note,
+.read-note {
+  /* flex: 1; */
+  width: 100%;
+  height: 380px;
+  padding: 20px;
+  white-space: pre-wrap; /* Otomatik olarak yeni satırlara geçiş yapmasını sağlar */
+  overflow-y: auto;
+}
+.read-note {
+  display: flex;
+}
+/* Container for input and read elements */
+.input-div,
+.read-div {
+  position: relative;
+}
+
+.trash-menu {
+  position: fixed;
+  top: 0;
+  left: -300px; /* Başlangıçta gizli olacak */
+  background-color: var(--color-box-main);
+  border: 3px solid var(--color-border-main);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border-radius: 18px;
+  margin-top: 9px;
+  margin-left: 10px;
+  width: 279px;
+  height: 397px;
+  transition: left 0.3s ease; /* Animasyon ekleyin */
+  max-height: 400px; /* Maksimum yükseklik belirtildi */
+}
+
+.trash-list {
+  list-style: none;
+  overflow-y: auto;
+  max-height: 259px;
+  position: relative;
+  margin: 13px;
+}
+.trash-menu.open {
+  left: 0; /* Açık durumda görünmesi için */
+}
+.trash-menu-buttons {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.trash-flex {
+  display: flex;
+  font-size: 16px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px;
+  background-color: var(--color-border-btn);
+  border-radius: 15px;
+  margin-bottom: 4px;
+  padding-left: 15px;
+}
+.trash-flex li:hover {
+  cursor: pointer;
+  /* border: 1px solid var(--color-border-main); */
+  /* width: 100%; */
+}
+.btn-restore {
+  background-image: url(img/restore.svg);
+  background-size: cover;
+  background-color: var(--color-border-btn);
+  border: none;
+  width: 19px;
+  height: 19px;
+  opacity: 0.5;
+  align-items: center;
+  /* display: none; */
+}
+.btn-restore:hover {
+  opacity: 1;
+  border: 1px solid var(--color-btn-hover);
+  background-color: var(--color-border-main);
+  border-radius: 5px;
+}
+.trash-menu {
+  color: var(--color-text-main);
+}
+.thrash-deleted {
+  display: inline-block;
+  color: var(--color-text-trash-header);
+  font-size: 16px;
+  margin-left: 20px;
+  border-bottom: solid 3px var(--color-border-main);
+}
+
+.trash-list,
+#sidebar-ol,
+.read-note,
+.input-note {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-scrollbar) var(--color-scrollbar-2);
+}
+.trash-menu-buttons {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.read-zone {
+  padding: 15px;
+}
+.top-right-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.settings-menu {
+  display: flex;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  right: 140px;
+  top: 7px;
+  transition: width 0.3s ease;
+  border: var(--color-border-main) 2px solid;
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 2px;
+  background-color: var(--color-scrollbar-2);
+}
+.settings-menu:hover {
+  width: 160px;
+  overflow: visible;
+}
+.settings-menu-buttons {
+  overflow: hidden;
+}
+.settings-menu-buttons button {
+  padding: 10px;
+  border-radius: 80px;
+  border: 1px hidden;
+
+  margin-left: 10px;
+  width: 40px;
+  height: 40px;
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+.btn-themeI {
+  /* border: 1px rgb(44, 44, 44) solid; */
+  background: linear-gradient(45deg, #aa3434 45%, #fff6de 55%);
+}
+.btn-themeII {
+  border: 1px rgb(44, 44, 44) solid;
+  background: linear-gradient(45deg, #a861ff 45%, #171717 55%);
+}
+.settings-menu:hover .settings-menu-buttons button {
+  width: 40px; /* Menü üzerine hover edildiğinde butonların genişliğini otomatik yap */
+}
+
+.btn-settings {
+  display: flex;
+  flex-direction: row;
+  border: none;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.btn-bookmark {
+  background-image: url(img/pin.svg);
+  background-size: cover;
+  background-color: var(--color-list-hover);
+  background-blend-mode: multiply;
+  background-clip: content-box;
+  border-radius: 5px;
+  margin: 0;
+  padding: 0px;
+  border: none;
+  width: 19px;
+  height: 19px;
+  opacity: 0.5;
+  align-items: center;
+  display: none;
+}
+.btn-bookmark:hover {
+  opacity: 1;
+  border: 1px solid var(--color-list-hover);
+  background-color: var(--color-border-main);
+  border-radius: 5px;
+}
+
+.sidebar-li-flex:hover .btn-bookmark {
+  display: block;
+}
+
+/* .btn-bookmark.active {
+  opacity: 1 !important;
+  border: 1px solid var(--color-list-hover) !important;
+  background-color: var(--color-border-main) !important;
+  border-radius: 5px !important;
+   display: block; 
+} */
+
+.btn-trash-menu:hover,
+.btn-add:hover,
+.btn-save:hover,
+.btn-edit:hover {
+  background-color: var(--color-scrollbar-2);
+}

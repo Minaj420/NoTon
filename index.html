@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NotoN</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-left-buttons">
+        <button class="btn-trash-menu"></button>
+        <button class="btn-search"></button>
+        <button class="btn-add"></button>
+      </div>
+      <p class="header-title">NotoN</p>
+
+      <div class="top-right-flex">
+        <div class="settings-menu">
+          <div class="settings-menu-buttons">
+            <button class="btn-themeI"></button>
+            <button class="btn-themeII"></button>
+          </div>
+          <span class="btn-settings"></span>
+        </div>
+
+        <div class="header-date">date</div>
+      </div>
+    </header>
+    <main>
+      <div class="sidebar-flex">
+        <div class="sidebar">
+          <ol id="sidebar-ol">
+            <!-- <div class="sidebar-li-flex">
+              <li data-index="">123</li>
+              <button class="btn-trash"></button>
+            </div> -->
+          </ol>
+        </div>
+        <div class="input-container">
+          <div class="title-flex">
+            <textarea class="input-title" placeholder="Title"></textarea>
+          </div>
+          <div class="input-div">
+            <textarea
+              class="input-note"
+              placeholder="Let's start taking down some notes!"
+            ></textarea>
+            <button class="btn-save"></button>
+          </div>
+        </div>
+        <div class="read-container">
+          <div class="title-flex">
+            <div class="read-title">Note title</div>
+            <span class="date-note">
+              <div class="date-created-text">mamaho</div>
+              <div class="date-modified-text">mamahoII</div>
+            </span>
+          </div>
+
+          <div class="read-div">
+            <div class="read-note">
+              <p class="read-zone">Your notes</p>
+              <button class="btn-edit"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <nav class="trash-menu">
+      <nav class="trash-menu-buttons">
+        <button class="btn-empty-trash"></button>
+        <button class="btn-trash-close"></button>
+      </nav>
+      <h3 class="thrash-deleted">Deleted Notes</h3>
+      <ol class="trash-list">
+        <!-- <div class="trash-flex">
+          <li><a></a>Deleted 1</li>
+          <button class="btn-restore"></button>
+        </div>
+        <div class="trash-flex">
+          <li><a></a>Deleted 2</li>
+          <button class="btn-restore"></button>
+        </div>
+        <div class="trash-flex">
+          <li><a></a>Deleted 3</li>
+          <button class="btn-restore"></button>
+        </div>
+        <div class="trash-flex">
+          <li><a></a>Deleted 4</li>
+          <button class="btn-restore"></button>
+        </div> -->
+      </ol>
+    </nav>
+
+    <script src="script.js"></script>
+  </body>
+</html>
